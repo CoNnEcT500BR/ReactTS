@@ -1,15 +1,14 @@
-import FamilyMember from "./FamilyMember";
+import { cloneElement, ReactElement } from "react";
 
 type TFamilyProps = {
   surname: string;
+  children: ReactElement[];
 };
 
-export default function Family({ surname }: TFamilyProps) {
+export default function Family({ children, ...rest }: TFamilyProps) {
   return (
     <div>
-      <FamilyMember name="Pedro" surname={surname} />
-      <FamilyMember name="Hugo" surname={surname} />
-      <FamilyMember name="Taís" surname="Branda" />
+      {children.map((child, i) => cloneElement(child, { ...rest, key: i }))}
     </div>
   );
 }

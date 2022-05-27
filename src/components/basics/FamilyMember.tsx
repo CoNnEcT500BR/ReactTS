@@ -1,6 +1,6 @@
 type TFamilyMemberProps = {
   name: string;
-  surname: string;
+  surname?: string;
 };
 
 export default function FamilyMember({ name, surname }: TFamilyMemberProps) {

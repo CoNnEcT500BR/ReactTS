@@ -1,11 +1,16 @@
 import "./App.css";
 import Cards from "./components/basics/Cards";
 import Family from "./components/basics/Family";
+import FamilyMember from "./components/basics/FamilyMember";
 import First from "./components/basics/First";
 import Params from "./components/basics/Params";
 import Random from "./components/basics/Random";
 
-export default function App() {
+type TAppProps = {
+  surname: string;
+};
+
+export default function App({ surname }: TAppProps) {
   return (
     <div className="app">
       <h1 className="title">Fundamentos React</h1>
@@ -28,7 +33,13 @@ export default function App() {
           />
           <Cards
             title="#04 - Componente com Filhos"
-            tag={<Family surname="Alves" />}
+            tag={
+              <Family surname="Alves">
+                <FamilyMember name="Pedro" />
+                <FamilyMember name="Hugo" />
+                <FamilyMember name="Taís" />
+              </Family>
+            }
           />
         </div>
       </div>
