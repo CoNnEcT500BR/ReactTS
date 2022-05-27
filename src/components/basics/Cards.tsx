@@ -3,10 +3,10 @@ import Card from "../layout/Card";
 
 type TCardsProps = {
   title: string;
-  tag: React.ReactNode;
+  children: React.ReactNode;
 };
 
-export default function Cards({ title, tag }: TCardsProps) {
+export default function Cards({ title, children }: TCardsProps) {
   let RandomColor = [];
 
   for (let index = 0; index < 3; index++) {
@@ -18,7 +18,7 @@ export default function Cards({ title, tag }: TCardsProps) {
 
   return (
     <Card title={title} color={RGB}>
-      {tag}
+      {children}
     </Card>
   );
 }
