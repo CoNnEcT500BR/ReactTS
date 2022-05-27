@@ -1,0 +1,20 @@
+.app {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.app .center {
+  width: 100vw;
+  height: 100vh;
+}
+
+.app .center .cards {
+  grid-template-columns: repeat(auto-fit, minmax(500px, 3fr));
+  display: grid;
+  justify-items: center;
+}
+
+.title {
+  font-weight: 500;
+}
