@@ -1,5 +1,4 @@
 import "./App.css";
-import Cards from "./components/basics/Cards";
 import Family from "./components/basics/Family";
 import FamilyMember from "./components/basics/FamilyMember";
 import First from "./components/basics/First";
@@ -7,6 +6,7 @@ import Params from "./components/basics/Params";
 import Random from "./components/basics/Random";
 import { Products } from "./components/data/products";
 import { Students } from "./components/data/students";
+import Card from "./components/layout/Card";
 import ProductsTable from "./components/repeat/ProductsTable";
 import StudentList from "./components/repeat/StudentList";
 
@@ -16,45 +16,49 @@ export default function App() {
       <h1 className="title">Fundamentos React</h1>
       <div className="center">
         <div className="cards">
-          <Cards title="#01 - Primeiro Componente">
+          <Card title="#01 - Primeiro Componente">
             <First />
-          </Cards>
-          <Cards title="#02 - Com Paramêtro">
+          </Card>
+          <Card title="#02 - Com Paramêtro">
             <Params
               title="Situação do Aluno"
               student="Matheus Oliveira"
               note={9.4}
             />
-          </Cards>
-          <Cards title="#03 - Desafio Aleatório">
+          </Card>
+          <Card title="#03 - Desafio Aleatório">
             <Random min={0} max={100} />
-          </Cards>
-          <Cards title="#04 - Componente com Filhos">
+          </Card>
+          <Card title="#04 - Componente com Filhos">
             <Family surname="Alves">
               <FamilyMember name="Pedro" />
               <FamilyMember name="Hugo" />
               <FamilyMember name="Taís" />
             </Family>
-          </Cards>
-          <Cards title="#05 - Repetição">
+          </Card>
+          <Card title="#05 - Repetição">
             {Students.map((Student, id) => (
-              <StudentList {...{ ...Student, id }} />
+              <StudentList key={id} {...{ ...Student, id }} />
             ))}
-          </Cards>
-          <Cards title="#06 - Desafio Repetição">
+          </Card>
+          <Card title="#06 - Desafio Repetição">
             <div className="product">
               <table className="table">
-                <tr>
-                  <th>ID</th>
-                  <th>NOME</th>
-                  <th>PREÇO</th>
-                </tr>
-                {Products.map((Product) => (
-                  <ProductsTable {...Product} />
-                ))}
+                <tbody>
+                  <tr>
+                    <th>ID</th>
+                    <th>NOME</th>
+                    <th>PREÇO</th>
+                  </tr>
+                </tbody>
+                <tbody>
+                  {Products.map((Product) => (
+                    <ProductsTable key={Product.id} {...Product} />
+                  ))}
+                </tbody>
               </table>
             </div>
-          </Cards>
+          </Card>
         </div>
       </div>
     </div>

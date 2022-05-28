@@ -13,7 +13,12 @@ export default function ProductsTable({
     <tr>
       <td>{id}</td>
       <td>{name}</td>
-      <td>R${price}</td>
+      <td>
+        {Intl.NumberFormat("pt-br", {
+          style: "currency",
+          currency: "BRL",
+        }).format(price)}
+      </td>
     </tr>
   );
 }

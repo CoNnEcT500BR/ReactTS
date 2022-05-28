@@ -4,14 +4,22 @@ import "./Card.css";
 
 type TCardProps = {
   title: string;
-  color: string;
   children: React.ReactNode;
 };
 
-export default function Card({ title, color, children }: TCardProps) {
+export default function Card({ title, children }: TCardProps) {
+  let RandomColor = [];
+
+  for (let index = 0; index < 3; index++) {
+    RandomColor.push(`${Math.floor(Math.random() * 255)}`);
+  }
+
+  let [R, G, B] = RandomColor;
+  const RGB = `rgb(${R}, ${G}, ${B})`;
+
   const cardStyle = {
-    backgroundColor: color || "#F6E683",
-    borderColor: color || "#F6E683",
+    backgroundColor: RGB || "#F6E683",
+    borderColor: RGB || "#F6E683",
   };
 
   return (
