@@ -4,6 +4,8 @@ import FamilyMember from "./components/basics/FamilyMember";
 import First from "./components/basics/First";
 import Params from "./components/basics/Params";
 import Random from "./components/basics/Random";
+import PairOrOdd from "./components/conditional/PairOrOdd";
+import UserInfo from "./components/conditional/UserInfo";
 import { Products } from "./components/data/products";
 import { Students } from "./components/data/students";
 import Card from "./components/layout/Card";
@@ -44,13 +46,13 @@ export default function App() {
           <Card title="#06 - Desafio Repetição">
             <div className="product">
               <table className="table">
-                <tbody>
+                <thead>
                   <tr>
                     <th>ID</th>
                     <th>NOME</th>
                     <th>PREÇO</th>
                   </tr>
-                </tbody>
+                </thead>
                 <tbody>
                   {Products.map((Product) => (
                     <ProductsTable key={Product.id} {...Product} />
@@ -58,6 +60,13 @@ export default function App() {
                 </tbody>
               </table>
             </div>
+          </Card>
+          <Card title="#07 - Renderização Condicional">
+            <PairOrOdd number={19} />
+            <UserInfo user={{ name: "Paulo" }} />
+            <UserInfo user={{ email: "Paulo@example.com" }} />
+            <UserInfo user={{}} />
+            <UserInfo />
           </Card>
         </div>
       </div>
