@@ -5,7 +5,9 @@ import FamilyMember from "./components/basics/FamilyMember";
 import First from "./components/basics/First";
 import Params from "./components/basics/Params";
 import Random from "./components/basics/Random";
+import { Products } from "./components/data/products";
 import { Students } from "./components/data/students";
+import ProductsTable from "./components/repeat/ProductsTable";
 import StudentList from "./components/repeat/StudentList";
 
 export default function App() {
@@ -38,6 +40,20 @@ export default function App() {
             {Students.map((Student, id) => (
               <StudentList {...{ ...Student, id }} />
             ))}
+          </Cards>
+          <Cards title="#06 - Desafio Repetição">
+            <div className="product">
+              <table className="table">
+                <tr>
+                  <th>ID</th>
+                  <th>NOME</th>
+                  <th>PREÇO</th>
+                </tr>
+                {Products.map((Product) => (
+                  <ProductsTable {...Product} />
+                ))}
+              </table>
+            </div>
           </Cards>
         </div>
       </div>

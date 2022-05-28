@@ -18,3 +18,18 @@
 .title {
   font-weight: 500;
 }
+
+.table {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.table tr td {
+  width: 88px;
+}
+
+.product {
+  display: flex;
+  justify-content: center;
+}

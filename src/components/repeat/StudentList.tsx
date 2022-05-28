@@ -1,6 +1,3 @@
-import React from "react";
-import { Students } from "../data/students";
-
 export type TStudentListProps = {
   id: number;
   name: string;
