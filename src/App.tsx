@@ -5,6 +5,7 @@ import First from "./components/basics/First";
 import Params from "./components/basics/Params";
 import Random from "./components/basics/Random";
 import DirectFather from "./components/comunication/DirectFather";
+import IndirectFather from "./components/comunication/IndirectFather";
 import PairOrOdd from "./components/conditional/PairOrOdd";
 import UserInfo from "./components/conditional/UserInfo";
 import { Products } from "./components/data/products";
@@ -71,6 +72,9 @@ export default function App() {
           </Card>
           <Card title="#08 - Comunicação Direta">
             <DirectFather />
+          </Card>
+          <Card title="#09 - Comunicação Indireta">
+            <IndirectFather />
           </Card>
         </div>
       </div>
