@@ -4,6 +4,7 @@ import FamilyMember from "./components/basics/FamilyMember";
 import First from "./components/basics/First";
 import Params from "./components/basics/Params";
 import Random from "./components/basics/Random";
+import DirectFather from "./components/comunication/DirectFather";
 import PairOrOdd from "./components/conditional/PairOrOdd";
 import UserInfo from "./components/conditional/UserInfo";
 import { Products } from "./components/data/products";
@@ -67,6 +68,9 @@ export default function App() {
             <UserInfo user={{ email: "Paulo@example.com" }} />
             <UserInfo user={{}} />
             <UserInfo />
+          </Card>
+          <Card title="#08 - Comunicação Direta">
+            <DirectFather />
           </Card>
         </div>
       </div>
