@@ -10,6 +10,7 @@ import PairOrOdd from "./components/conditional/PairOrOdd";
 import UserInfo from "./components/conditional/UserInfo";
 import { Products } from "./components/data/products";
 import { Students } from "./components/data/students";
+import Input from "./components/forms/Input";
 import Card from "./components/layout/Card";
 import ProductsTable from "./components/repeat/ProductsTable";
 import StudentList from "./components/repeat/StudentList";
@@ -75,6 +76,9 @@ export default function App() {
           </Card>
           <Card title="#09 - Comunicação Indireta">
             <IndirectFather />
+          </Card>
+          <Card title="10 - Componente Controlado (Input)">
+            <Input />
           </Card>
         </div>
       </div>
